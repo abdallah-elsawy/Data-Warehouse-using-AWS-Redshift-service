@@ -45,12 +45,27 @@ songplays - records in event data associated with song plays i.e. records with p
 songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 - Dimension Tables
 1. users - users in the app
-user_id, first_name, last_name, gender, level
+    - user_id, first_name, last_name, gender, level
 2. songs - songs in music database
-song_id, title, artist_id, year, duration
+    - song_id, title, artist_id, year, duration
 3. artists - artists in music database
-artist_id, name, location, lattitude, longitude
+    - artist_id, name, location, lattitude, longitude
 4. time - timestamps of records in songplays broken down into specific units
-start_time, hour, day, week, month, year, weekday
+    - start_time, hour, day, week, month, year, weekday
 
 ## Project Template
+  
+- Create Table Schemas
+1. Design schemas for our fact and dimension tables
+2. Writing a SQL CREATE statement for each of these tables in sql_queries.py
+3. Completing the logic in create_tables.py to connect to the database and creating these tables
+4. Writing SQL DROP statements to drop tables in the beginning of create_tables.py if the tables already exist. This way, we can run create_tables.py whenever we want to reset the database and test the ETL pipeline.
+5. Launching a redshift cluster and creating an IAM role that has read access to S3.
+6. Adding redshift database and IAM role info to dwh.cfg.
+7. Testing by running create_tables.py and checking the table schemas in our redshift database. we can use Query Editor in the AWS Redshift console for this.
+  
+- Build ETL Pipeline
+1. Implementing the logic in etl.py to load data from S3 to staging tables on Redshift.
+2. Implementing the logic in etl.py to load data from staging tables to analytics tables on Redshift.
+3. Testing by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
+4. Deleting the redshift cluster when finished.
