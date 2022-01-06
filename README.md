@@ -53,7 +53,7 @@ songplay_id, start_time, user_id, level, song_id, artist_id, session_id, locatio
 4. time - timestamps of records in songplays broken down into specific units
     - start_time, hour, day, week, month, year, weekday
 
-## Project Template
+## Project steps
   
 - Create Table Schemas
 1. Design schemas for our fact and dimension tables
@@ -69,3 +69,7 @@ songplay_id, start_time, user_id, level, song_id, artist_id, session_id, locatio
 2. Implementing the logic in etl.py to load data from staging tables to analytics tables on Redshift.
 3. Testing by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
 4. Deleting the redshift cluster when finished.
+    
+    
+##  sparkify database schema design and ETL pipeline.
+![](Data/Song_ERD.png)    
