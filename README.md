@@ -22,7 +22,7 @@ song_data/A/B/C/TRABCEI128F424C983.json
 song_data/A/A/B/TRAABJL12903CDCF1A.json
 And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.
 
-{"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null,
+{"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null,"artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
 
 
 
@@ -36,3 +36,21 @@ log_data/2018/11/2018-11-13-events.json
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.
 
 ![](Data/log-data.png)
+
+## Schema for Song Play Analysis
+Using the song and event datasets, we'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.
+
+- Fact Table
+songplays - records in event data associated with song plays i.e. records with page NextSong
+songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+- Dimension Tables
+1- users - users in the app
+user_id, first_name, last_name, gender, level
+2- songs - songs in music database
+song_id, title, artist_id, year, duration
+3- artists - artists in music database
+artist_id, name, location, lattitude, longitude
+4- time - timestamps of records in songplays broken down into specific units
+start_time, hour, day, week, month, year, weekday
+
+## Project Template
